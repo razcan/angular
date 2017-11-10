@@ -11,6 +11,8 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 })
 
 export class Pagina2Component implements OnInit {
+
+  result: any;
   ngOnInit(): void {
     this.http.get('http://localhost:3000').subscribe((res) => {
     const result = res.json();
@@ -18,5 +20,4 @@ export class Pagina2Component implements OnInit {
   });
   }
   constructor(private http: Http) {}
-  result: any;
 }

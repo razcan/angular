@@ -16,10 +16,8 @@
 
   <div class="panel panel-primary">
     <div class="panel-heading">Single Page App - CV form
-      <button class="btn btn-info" (click)="afiseazadate()">Afiseaza toti userii</button>
     </div>
-    <a routerLink="/pagina2" ><div class="bg-inverse text-white">Pagina 2</div></a>
-    <a routerLink="/second-page"><div class="bg-inverse text-white">Second Page</div></a>
+    <button class="btn btn-info"><a routerLink="/pagina2" ><div class="bg-inverse text-white">Afiseaza toti userii la data:  {{dataprelucrata}} </div></a></button>
     <router-outlet></router-outlet>
   </div>
 

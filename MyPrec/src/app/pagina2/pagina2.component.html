@@ -1,3 +1,15 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
+
+
+
 <div ng-app="serviceApp" ng-controller="serviceCtrl">
 <table class="table table-striped" style="width:100%">
     <thead>
@@ -9,6 +21,7 @@
       <th>Diplome</th>
       <th>Observatii</th>
       <th>AutoEvaluare</th>
+      <th>Actiune</th>
     </tr>
    </thead>
     <tr *ngFor="let vars of result">
@@ -19,6 +32,11 @@
         <td>{{ vars.diplome }}</td>
         <td>{{ vars.Remarks }}</td>
         <td>{{ vars.AutoEval }}</td>
+        <td> <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit"></span></button>
+            <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"  data-toggle="tooltip" data-placement="top" title="Delete"></span></button>
+       </td>
       </tr>
 
   </table>

@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
   result:any;
   varButon: any;
 
+  data =  new Date();
+  dataprelucrata = this.data.getDate().toString() + ' - ' + (1 + this.data.getMonth()) + ' - ' + this.data.getFullYear().toString()  ;
 
  afiseazadate() {
     this.http.get('http://localhost:3000').subscribe((res) => {
