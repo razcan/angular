@@ -1,0 +1,25 @@
+<div ng-app="serviceApp" ng-controller="serviceCtrl">
+<table class="table table-striped" style="width:100%">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nume</th>
+      <th>Prenume</th> 
+      <th>DataNastere</th>
+      <th>Diplome</th>
+      <th>Observatii</th>
+      <th>AutoEvaluare</th>
+    </tr>
+   </thead>
+    <tr *ngFor="let vars of result">
+        <td> {{ vars.ID }}</td>
+        <td> {{ vars.nume }}</td>
+        <td>{{ vars.prenume }}</td> 
+        <td>{{ vars.dataNastere }}</td>
+        <td>{{ vars.diplome }}</td>
+        <td>{{ vars.Remarks }}</td>
+        <td>{{ vars.AutoEval }}</td>
+      </tr>
+
+  </table>
+  </div>

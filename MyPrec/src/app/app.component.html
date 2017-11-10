@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <head>
   <meta charset="utf-8">
-  <title>Angular Bootstrap Demo</title>
+  <title>Single Page App - CV form </title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,29 +9,100 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
-<body>
+
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <div class="panel panel-primary">
-    <div class="panel-heading">Menu</div>
-    <div class="panel-body">
-      <h3>Powered by {{nume}} {{prenume}}</h3>
+    <div class="panel-heading">Single Page App - CV form
+      <button class="btn btn-info" (click)="afiseazadate()">Afiseaza toti userii</button>
     </div>
+    <a routerLink="/pagina2" ><div class="bg-inverse text-white">Pagina 2</div></a>
+    <a routerLink="/second-page"><div class="bg-inverse text-white">Second Page</div></a>
+    <router-outlet></router-outlet>
   </div>
 
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
   
-  <input type="text" [(ngModel)] = "nume" /> <br>
-  <input type="text" [(ngModel)] = "prenume" /> <br>
-  
-  Numele Complet : {{nume}} {{prenume}}
+  <div ng-app="serviceApp" ng-controller="serviceCtrl">
+    {{nume}}
+    {{prenume}}
+    </div> 
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <label for="nume">Nume</label>
+                      <input type="text" class="form-control" id="nume"  [(ngModel)] = "nume" />
+                      <label for="prenume">Prenume</label>
+                      <input type="text" class="form-control" id="prenume" [(ngModel)] = "prenume" /> 
+                      <label for="example-date-input" class="col-2 col-form-label">Data Nastere</label>
+                      <div class="col-10">
+                        <input class="form-control" type="date" value="2017-11-08" id="example-date-input" [(ngModel)] = "dataNastere">
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="Diplome">Diplome Obtinute</label>
+                          <select multiple class="form-control" id="Diplome" [(ngModel)] = "diplome">
+                            <option>Liceala</option>
+                            <option>Universitara</option>
+                            <option>Postuniversitara</option>
+                            <option>MBA</option>
+                          </select>
+                        </div>
 
-  <app-second-page></app-second-page>
+                        <div class="form-group">
+                            <label for="Remarks">Cele mai importante lucruri despre tine</label>
+                            <textarea class="form-control" id="Remarks" rows="3" [(ngModel)] = "Remarks"></textarea>
+                          </div>
+
+                          <fieldset class="form-group">
+                              <legend>Auto evaluare</legend>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Sunt mediocru" [(ngModel)] = "AutoEval">
+                                  Sunt mediocru
+                                </label>
+                              </div>
+                              <div class="form-check">
+                              <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Sunt destept" [(ngModel)] = "AutoEval">
+                                  Sunt destept
+                                </label>
+                              </div>
+                              <div class="form-check">
+                              <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="Sunt inteligent" [(ngModel)] = "AutoEval">
+                                  Sunt inteligent
+                                </label>
+                              </div>
+                            </fieldset>
+
+                            <button type="button" class="btn btn-success" (click)="handleSubmit()">Salveaza</button>
+                            <button type="button" class="btn btn-danger">Reseteaza</button>  
+
+                  </div>
+              </div>
+          </div>    
+    
+
+  <h3>String complet CV: <br>
+    Nume: {{nume}} ; Prenume: {{prenume}} ; DataNastere: {{dataNastere}} ; Diplome {{diplome}} Observatii: {{Remarks}}+ AutoEvaluare {{AutoEval}}</h3>
+<!-- 
+<h3>Server message: {{array}}</h3>
+<h3>Server message: {{rezultat}}</h3>
+
+<div>{{result | json}}</div> 
+<div>{{varButon | json}}</div>
+<ul>
+    <li *ngFor="let vars of varButon">
+      {{ vars.nume }}
+    </li>
+  </ul>
+
+  <a target="_blank" routerLink="/pagina2">lINK </a>
+-->
+
+
   
-</body>
+  
+ 
