@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecondPageComponent } from './second-page.component';
+import { ListaCvdetaliuComponent } from './lista-cvdetaliu.component';
 
-describe('SecondPageComponent', () => {
-  let component: SecondPageComponent;
-  let fixture: ComponentFixture<SecondPageComponent>;
+describe('ListaCvdetaliuComponent', () => {
+  let component: ListaCvdetaliuComponent;
+  let fixture: ComponentFixture<ListaCvdetaliuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecondPageComponent ]
+      declarations: [ ListaCvdetaliuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecondPageComponent);
+    fixture = TestBed.createComponent(ListaCvdetaliuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

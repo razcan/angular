@@ -1,46 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<head>
-  <meta charset="utf-8">
-  <title>Single Page App - CV form </title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-
-
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
- <!--
-  <div class="panel panel-primary">
-      <div class="panel-heading">Single Page App - CV form
-      </div>
-      <button class="btn btn-info"><a routerLink="/pagina2" ><div class="bg-inverse text-white">Afiseaza toti userii la data:  {{dataprelucrata}} </div></a></button>
-  </div>
--->
-    
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">CV.com</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li ><a routerLink="/">Home</a></li>
-          <li ><a routerLink="input-cv"><div class="bg-inverse text-white">Input CV</div></a></li>
-          <li ><a routerLink="lista-cv">Lista-CV</a></li>
-        </ul>
-      </div>
-    </nav>
 <br><br><br>
-
-
-<router-outlet></router-outlet>
-  <!--   
 <div ng-app="serviceApp" ng-controller="serviceCtrl">
-  </div> 
           <div class="container">
               <div class="row">
                   <div class="col">
@@ -52,7 +12,7 @@
                       <div class="col-10">
                         <input class="form-control" type="date" value="2017-11-08" id="example-date-input" [(ngModel)] = "dataNastere">
                       </div>
-                      
+                       
                       <div class="form-group">
                           <label for="Diplome">Diplome Obtinute</label>
                           <select multiple class="form-control" id="Diplome" [(ngModel)] = "diplome">
@@ -96,26 +56,4 @@
                   </div>
               </div>
           </div>    
-    
-
-  <h3>String complet CV: <br>
-    Nume: {{nume}} ; Prenume: {{prenume}} ; DataNastere: {{dataNastere}} ; Diplome {{diplome}} Observatii: {{Remarks}}+ AutoEvaluare {{AutoEval}}</h3>
-
-<h3>Server message: {{array}}</h3>
-<h3>Server message: {{rezultat}}</h3>
-
-<div>{{result | json}}</div> 
-<div>{{varButon | json}}</div>
-<ul>
-    <li *ngFor="let vars of varButon">
-      {{ vars.nume }}
-    </li>
-  </ul>
-
-  <a target="_blank" routerLink="/pagina2">lINK </a>
--->
-
-
-  
-  
- 
+        </div>

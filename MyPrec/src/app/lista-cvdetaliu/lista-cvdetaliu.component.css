@@ -1,0 +1,13 @@
+div.container {
+    margin-left: 2cm;
+    width: 20%;
+    border: 1px solid #eb7575;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
