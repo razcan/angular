@@ -28,7 +28,7 @@
    </thead>
     <tr *ngFor="let vars of result">
         <td><a (click)="onSelect(vars)"> {{ vars.ID }} </a></td>
-        <td> {{ vars.nume }} </td>
+        <td #nume> {{ vars.nume }} </td>
         <td>{{ vars.prenume }}</td> 
         <td>{{ vars.dataNastere }}</td>
         <td>{{ vars.diplome }}</td>
@@ -46,6 +46,7 @@
   </table>
   </div>
 </div>
+
 <button (click)="test(555)">click me</button>
 </form>
 

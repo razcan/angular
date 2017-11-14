@@ -17,8 +17,9 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ListaCvdetaliuComponent implements OnInit {
   public Id;
-@Input() valPasarica: number;
-@Input() nume: string;
+
+  @Input() numeInput: string;
+
   constructor(private route: ActivatedRoute) { }
   result;
   ngOnInit() {
