@@ -17,7 +17,7 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 })
 export class ListaCvComponent implements OnInit {
   result: any;
-  test5: any;
+  nume: any;
   rezultat: number;
   NumarInt: number ;
   fix: number;
@@ -43,6 +43,5 @@ test(NumarInt: number) {
 }
 
 constructor(private http: Http, private router: Router) {
-  this.test5 = 55;
 }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { ViewEncapsulation, NgModule } from '@angular/core' ;
 import { ListaCvComponent } from './../lista-cv/lista-cv.component';
+import { ActivatedRoute } from '@angular/router';
 
 @NgModule ({
   declarations: [ListaCvComponent]
@@ -15,13 +16,16 @@ import { ListaCvComponent } from './../lista-cv/lista-cv.component';
 })
 
 export class ListaCvdetaliuComponent implements OnInit {
+  public Id;
 @Input() valPasarica: number;
-  constructor() { }
-
+@Input() nume: string;
+  constructor(private route: ActivatedRoute) { }
   result;
-
   ngOnInit() {
+    const IdRuta = this.route.snapshot.params['ID'];
+    this.Id = IdRuta;
   }
+
 
 }
 
