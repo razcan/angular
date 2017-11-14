@@ -29,7 +29,7 @@ import { InputCvComponent } from './input-cv/input-cv.component';
       component: InputCvComponent},
       {path: 'lista-cv',
       component: ListaCvComponent},
-      {path: 'lista-cvdetaliu',
+      {path: 'lista-cvdetaliu/:ID',
       component: ListaCvdetaliuComponent},
     ]),
   ],
@@ -40,3 +40,4 @@ import { InputCvComponent } from './input-cv/input-cv.component';
 
 export class AppModule {
 }
+export const routingComponents =  [InputCvComponent, ListaCvComponent, ListaCvdetaliuComponent];
