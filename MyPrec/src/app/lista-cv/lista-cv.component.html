@@ -16,7 +16,7 @@
 <table class="table table-striped" style="width:100%">
     <thead>
     <tr>
-      <th>ID</th>
+      <th style="display: none">ID</th>
       <th>Nume</th>
       <th>Prenume</th> 
       <th>DataNastere</th>
@@ -27,14 +27,14 @@
     </tr>
    </thead>
     <tr *ngFor="let vars of result">
-        <td><a (click)="onSelect(vars)"> {{ vars.ID }} </a></td>
-        <td #nume> {{ vars.nume }} </td>
+        <td style="display: none"> {{ vars.ID }} </td>
+        <td> {{ vars.nume }} </td>
         <td>{{ vars.prenume }}</td> 
         <td>{{ vars.dataNastere }}</td>
         <td>{{ vars.diplome }}</td>
         <td>{{ vars.Remarks }}</td>
         <td>{{ vars.AutoEval }}</td>
-        <td> <button type="button" class="btn btn-default btn-sm">
+        <td> <button type="button" class="btn btn-default btn-sm" (click)="onSelect(vars)">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit"></span>
             <a routerLink="lista-cvdetaliu"><div class="bg-inverse text-white"></div></a>
           </button>
