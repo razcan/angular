@@ -27,15 +27,26 @@ export class ListaCvdetaliuComponent implements OnInit {
   public Id;
   results: any ;
   val1;
-
-  @Input() numeInput: string;
+  private nume = '';
+  prenume;
+  dataNastere;
+  diplome;
+  Remarks;
+  AutoEval;
+  response;
+  rezultat;
+  result;
+  ID;
+  scope: any;
 
   constructor(private http: Http, private route: ActivatedRoute) { }
+
+  @Input()
+  set name(nume: string) {
+    this.nume = ('kkt');
+  }
+
   ngOnInit() {
-
-    let params = new HttpParams();
-    params = params.append('var1', this.val1);
-
     const IdRuta = this.route.snapshot.params['ID'];
     this.Id = IdRuta;
     this.http.get('http://localhost:3000/cv/' + this.Id).subscribe((res) => {
@@ -44,4 +55,22 @@ export class ListaCvdetaliuComponent implements OnInit {
     }
   );
   }
+  handleUpdate() {
+
+    this.http.post('http://localhost:3000/update',
+        {nume: this.nume , prenume: this.prenume, dataNastere: this.dataNastere, diplome: this.diplome,
+        Remarks: this.Remarks, AutoEval: this.AutoEval
+      }).subscribe((res) => {
+    const result = res.json();
+  });
+  }
+getValues(nume, prenume, dataNastere, diplome, Remarks, AutoEval) {
+console.log(nume);
+console.log(prenume);
+console.log(dataNastere);
+console.log(diplome);
+console.log(Remarks);
+console.log(AutoEval);
+}
+
 }
