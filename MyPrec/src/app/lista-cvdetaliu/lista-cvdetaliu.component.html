@@ -24,7 +24,7 @@
         </tr>
         <tr> 
             <td> Diplome </td>
-            <td> <select multiple class="form-control" id="Diplome" [value] = "result.dataNastere">
+            <td> <select multiple class="form-control" id="Diplome" [value] = "result.diplome">
                     <option>Liceala</option>
                     <option>Universitara</option>
                     <option>Postuniversitara</option>
@@ -61,7 +61,7 @@
         </tr>
         <tr>
             <td>
-              <button type="button" class="btn btn-success" (click)="getValues(result.ID, result.nume, result.prenume, result.dataNastere, result.Remarks, result.AutoEval)">Salveaza</button>  
+              <button type="button" class="btn btn-success" (click)="getValues(result.ID, result.nume, result.prenume, result.dataNastere, result.diplome, result.Remarks, result.AutoEval)">Salveaza</button>  
             </td>  
         </tr>
   </table>

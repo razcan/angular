@@ -64,13 +64,19 @@ export class ListaCvdetaliuComponent implements OnInit {
     const result = res.json();
   });
   }
-getValues(nume, prenume, dataNastere, diplome, Remarks, AutoEval) {
-console.log(nume);
+getValues(ID, nume, prenume, dataNastere, diplome, Remarks, AutoEval) {
+  console.log(ID);
+  console.log(nume);
 console.log(prenume);
 console.log(dataNastere);
 console.log(diplome);
 console.log(Remarks);
 console.log(AutoEval);
+this.http.post('http://localhost:3000/update',
+{ID: ID, nume: nume , prenume: prenume, dataNastere: dataNastere, diplome: diplome, Remarks: Remarks, AutoEval: AutoEval
+}).subscribe((res) => {
+const result = res.json();
+});
 }
 
 }
