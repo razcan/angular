@@ -1,36 +1,63 @@
-
+<div ng-app="serviceApp" ng-controller="serviceCtrl">
 <div class="container">
-<header>Edit Value {{Id}} {{numeInput}} </header>
+<header>Edit Value {{Id}} </header>
   <br>
-<table class="table" style="width:100%">
+<table class="table" style="width:100%" *ngFor="let result of results">
 
         <tr> 
               <td> ID </td>
-              <td> {{Id}}</td>   
+              <td> {{ result.ID }}</td>   
         </tr>
         <tr> 
             <td> Nume </td>
-            <td> ds</td>   
+            <td> <!-- {{ result.nume }} -->
+                    <input type="text" class="form-control" id="nume" [(ngModel)]="result.nume"/>    
+            </td>   
         </tr>
         <tr> 
             <td> Prenume </td>
-            <td> Valoare</td>   
+            <td>  <input type="text" class="form-control" id="nume" [(ngModel)]="result.prenume"/>    </td>   
         </tr>
         <tr> 
             <td> DataNastere </td>
-            <td> Valoare</td>   
+            <td> <input class="form-control" type="date"  id="example-date-input" #myDate [value]="result.dataNastere | date:'yyyy-MM-dd'"></td>   
         </tr>
         <tr> 
             <td> Diplome </td>
-            <td> Valoare</td>   
+            <td> <select multiple class="form-control" id="Diplome" [value] = "result.diplome">
+                    <option>Liceala</option>
+                    <option>Universitara</option>
+                    <option>Postuniversitara</option>
+                    <option>MBA</option>
+                  </select></td>   
         </tr>
         <tr> 
             <td> Observatii </td>
-            <td> Valoare</td>   
+            <td> <textarea class="form-control" id="Remarks" rows="3" [(ngModel)] = "result.Remarks"></textarea></td>   
         </tr>
         <tr> 
             <td> AutoEvaluare </td>
-            <td> Valoare</td>   
+            <td> <fieldset class="form-group">
+                    <legend>Auto evaluare</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Sunt mediocru" [(ngModel)] = "result.AutoEval">
+                        Sunt mediocru
+                      </label>
+                    </div>
+                    <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Sunt destept" [(ngModel)] = "result.AutoEval">
+                        Sunt destept
+                      </label>
+                    </div>
+                    <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="Sunt inteligent" [(ngModel)] = "result.AutoEval">
+                        Sunt inteligent
+                      </label>
+                    </div>
+                  </fieldset></td>   
         </tr>
         <tr>
             <td>
@@ -40,3 +67,4 @@
   </table>
 
  </div>
+</div>
