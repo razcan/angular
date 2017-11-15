@@ -79,4 +79,13 @@ const result = res.json();
 });
 }
 
+DelValues(ID) {
+  console.log(ID);
+this.http.post('http://localhost:3000/delete',
+{ID: ID
+}).subscribe((res) => {
+const result = res.json();
+});
+}
+
 }

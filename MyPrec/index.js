@@ -112,6 +112,11 @@ diplome: `${content.diplome}`,Remarks: `${content.Remarks}`,AutoEval: `${content
       var Remarks = req.param('Remarks');
       var AutoEval = req.param('AutoEval');
 
+      var query = connection.query('update ListaCV SET nume= ? , prenume=? where ID= ?', [nume,prenume,ID], function (error, results, fields) {
+        if (error) throw error;
+        // Neat!
+      });
+      console.log(query.sql);
          
      console.log(ID);
      console.log(nume);
