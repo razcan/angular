@@ -31,10 +31,42 @@
           <li ><a routerLink="/">Home</a></li>
           <li ><a routerLink="input-cv"><div class="bg-inverse text-white">Input CV</div></a></li>
           <li ><a routerLink="lista-cv">Lista-CV</a></li>
+          <li ><a routerLink="sa-uploadam">Upload</a></li>
         </ul>
       </div>
     </nav>
 <br><br><br>
+
+
+
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+  <ul class="list-group">
+      <a  class="list-group-item">
+          <i class="fa fa-fw fa-dashboard"></i>&nbsp;Dashboard
+      </a>
+      <a  class="list-group-item">
+        <i class="fa fa-fw fa-dashboard"></i>&nbsp;Dashboard
+      </a>
+      <div class="nested-menu">
+          <a class="list-group-item" >
+              <span><i class="fa fa-plus"></i>&nbsp; Menu</span>
+          </a>
+          <li class="nested">
+              <ul class="submenu">
+                  <li>
+                      <a href="javascript:void(0)"><span>Submenu1</span></a>
+                  </li>
+                  <li>
+                      <a href="javascript:void(0)"><span>Submenu2</span></a>
+                  </li>
+                  <li>
+                      <a href="javascript:void(0)"><span>Submenu3</span></a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+  </ul>
+</nav>
 
 
 <router-outlet></router-outlet>

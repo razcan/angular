@@ -1,0 +1,153 @@
+
+1. dublu binding:
+
+<div ng-app="">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+</div>
+
+in app.module.ts
+pentru a face dublu binding trebuie importata clasa import { FormsModule } from '@angular/forms';
+imports: [
+    BrowserModule,
+    FormsModule]
+iar ca si exemplu de folosire este <input type="text" [(ngModel)] = "nume" />
+dupa ce a fost exportata proprietatea respectiva:
+export class AppComponent {
+  nume= 'Mustata';
+  prenume = 'Razvan' ;
+}
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AppComponent } from './app.component';
+
+
+2.pentru a lansa aplicatia pe alt port
+ng serve --host 0.0.0.0 --port 4201
+
+3.pentru instalare angular
+npm install -g @angular/cli
+npm install -g typescript
+npm install --save-dev @angular/cli@latest
+
+C:\Users\T3610\AppData\Roaming\npm\MyPrec>
+
+4.pentru a genera o noua componenta
+ng generate component YOURCOMPONENTNAME
+sau
+ng g c YOURCOMPONENTNAME
+
+5.cand se adauga o noua componenta trebuie facut import in componenta:
+import { ViewEncapsulation } from '@angular/core'
+altfel avem eroarea:
+"error TS2304: Cannot find name "ViewEncapsulation'" when I run 'ng generate component '. #8376
+
+6.lansare git bash
+start "" "%SYSTEMDRIVE%\Program Files\Git\bin\sh.exe" --login
+config git:
+
+https://github.com/razcan/angular.git
+
+echo "# angular" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/razcan/angular.git
+git push -u origin master
+
+git remote add origin https://github.com/razcan/angular.git
+git push -u origin master
+
+7.Pachete instalate de alex
+ "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+ 
+8.pornire server node, din C:\Users\T3610\Projects\node-backend>node index.js
+nodemon index.js
+node index.js
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const mysql      = require('mysql');
+const connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'root',
+  database : 'hello'
+});
+connection.connect();
+const app = express()
+app.use(bodyParser.json());
+app.use(cors())
+
+app.get('/', (req, res) => {
+    let result = {
+        message: "Hello world"
+    }
+    res.send(result)
+})
+
+app.post('/', (req, res) => {    
+       let content = req.body;
+        console.log(content);
+        let result = {
+            message: `Hello ${content.name || 'World'}`
+        }      
+        var query = connection.query('INSERT INTO logs SET ?', { "message": result.message }, function (error, results, fields) {
+            if (error) throw error;
+            // Neat!
+          });
+          console.log(query.sql);       
+        res.send(result)
+    })
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
+8.route
+import { RouterModule, Routes } from '@angular/router';
+imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot([
+      {path: 'second-page',
+      component: SecondPageComponent},
+      {path: 'pagina2',
+      component: Pagina2Component},
+    ]),
+  ],
+https://www.youtube.com/watch?v=L6ipgij-AUw
+Router
+RouterLink
+RouterLnkActive="active current"
+import { Activated Route } from '@angular/router';
+9. typescript module:
+To include a module, use the require() function with the name of the module:
+var http = require('http');
+10.ts evenimete are nevoie de modulul events :
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+11.pentru lucrul cu fisiere, ts, are nevoie de modulul : var formidable = require('formidable');
+12. de analizat sintaxa - pg 50 angular4
+ <li *ngFor="let individualUserName of names">
+ <app-user-item [name]="individualUserName"></app-user-item>
+</li>
+13.pot sa declar o variabila locala pe care o sa o am accesibila in DOM,daca folosesc proprietate value
+<input name="title" #newtitle>
+{{newtitle.value}}
+<button (click)="addArticle(newtitle, newlink)"
+class="ui positive right floated button">
+</button>
+pg62
+14. css
+div.container {
+    margin-left: 2cm;
+    width: 20%;
+    border: 1px solid #eb7575;
+}
+

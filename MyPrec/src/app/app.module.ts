@@ -9,6 +9,11 @@ import { Pagina2Component } from './pagina2/pagina2.component';
 import { ListaCvComponent } from './lista-cv/lista-cv.component';
 import { ListaCvdetaliuComponent } from './lista-cvdetaliu/lista-cvdetaliu.component';
 import { InputCvComponent } from './input-cv/input-cv.component';
+import { SaUploadamComponent } from './sa-uploadam/sa-uploadam.component';
+import { Ng2FileInputModule } from 'ng2-file-input';
+import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -16,11 +21,13 @@ import { InputCvComponent } from './input-cv/input-cv.component';
     Pagina2Component,
     ListaCvComponent,
     ListaCvdetaliuComponent,
-    InputCvComponent
+    InputCvComponent,
+    SaUploadamComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    Ng2FileInputModule.forRoot(),
     HttpModule,
     RouterModule.forRoot([
       {path: 'pagina2',
@@ -31,6 +38,8 @@ import { InputCvComponent } from './input-cv/input-cv.component';
       component: ListaCvComponent},
       {path: 'lista-cvdetaliu/:ID',
       component: ListaCvdetaliuComponent},
+      {path: 'sa-uploadam',
+      component: SaUploadamComponent},
     ]),
   ],
   providers: [],
@@ -40,4 +49,4 @@ import { InputCvComponent } from './input-cv/input-cv.component';
 
 export class AppModule {
 }
-export const routingComponents =  [InputCvComponent, ListaCvComponent, ListaCvdetaliuComponent];
+export const routingComponents =  [InputCvComponent, ListaCvComponent, ListaCvdetaliuComponent, SaUploadamComponent];
