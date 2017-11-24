@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SaUploadamComponent } from './sa-uploadam.component';
+import { CkeditorComponent } from './ckeditor.component';
 
-describe('SaUploadamComponent', () => {
-  let component: SaUploadamComponent;
-  let fixture: ComponentFixture<SaUploadamComponent>;
+describe('CkeditorComponent', () => {
+  let component: CkeditorComponent;
+  let fixture: ComponentFixture<CkeditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SaUploadamComponent ]
+      declarations: [ CkeditorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SaUploadamComponent);
+    fixture = TestBed.createComponent(CkeditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

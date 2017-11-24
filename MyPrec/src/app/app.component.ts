@@ -3,21 +3,23 @@ import { Http } from '@angular/http';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { FileUploader } from 'ng2-file-upload';
 import { Ng2FileInputModule } from 'ng2-file-input';
-import { SaUploadamComponent } from './sa-uploadam/sa-uploadam.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SaUplodamComponent } from './sa-uplodam/sa-uplodam.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   imports: [BrowserModule,
+            FileUploadModule,
             Ng2FileInputModule.forRoot() // <-- include it in your app module
            ],
-  declarations: [SaUploadamComponent]
+  declarations: [SaUplodamComponent]
 })
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {

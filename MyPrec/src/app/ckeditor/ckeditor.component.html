@@ -1,0 +1,12 @@
+
+<ckeditor
+  [(ngModel)]="ckeditorContent"
+  [config]="{uiColor: '#e0bf6b',
+            height: '200px',
+            width: '800px'}"
+  [readonly]="false"
+  debounce="500">
+</ckeditor>
+
+<div [innerHTML]="ckeditorContent"></div>
+<div [innerHTML]="content"></div>
