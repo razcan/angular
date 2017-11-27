@@ -14,7 +14,8 @@ import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } f
 import { SaUplodamComponent } from './sa-uplodam/sa-uplodam.component';
 import { CkeditorComponent } from './ckeditor/ckeditor.component';
 import { CKEditorModule } from 'ng2-ckeditor';
-
+import { FileSelectDirective, FileUploader } from 'ng2-file-upload';
+import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { CKEditorModule } from 'ng2-ckeditor';
     InputCvComponent,
     SaUplodamComponent,
     CkeditorComponent,
+    FileSelectDirective,
+
   ],
   imports: [
     BrowserModule,
